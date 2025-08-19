@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +12,16 @@
     img { max-width: 100%; border-radius: 8px; margin: 16px 0; border: 1px solid #ddd; }
     a.button { display: inline-block; margin-top: 12px; padding: 10px 16px; background-color: #2563eb; color: #fff; text-decoration: none; border-radius: 6px; }
   </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
+
 <body>
   <h1>Sai Priya Anumula</h1>
-  <p><strong> My Portfolio</strong></p>
+  <p><strong>My Portfolio</strong></p>
   <p>This portfolio highlights infrastructure projects, automation, and cloud DevOps capabilities aligned with GCP and Terraform.</p>
 
-  <a class="button" href="https://apriya4092.github.io/gcp-cloud-portfolio/Sai_Priya_Anumula_GCP_Cloud_Portfolio.pdf" download>Download Portfolio (PDF)</a>
+  <a class="button" href="#" onclick="generatePDF()">Download Portfolio (PDF)</a>
 
   <h2>📊 Summary</h2>
   <p>Experienced Cloud Engineer with 5+ years of hands-on experience in designing secure, automated infrastructure on Google Cloud Platform (GCP). Strong background in Infrastructure as Code (IaC) using Terraform, Python automation, hybrid cloud networking, and enterprise consulting. Proven ability to lead cross-functional initiatives, troubleshoot complex cloud deployments, and support platform enablement at scale.</p>
@@ -88,5 +90,20 @@
     <li>Google Cloud Professional Cloud Architect (In Progress)</li>
     <li>Python PCEP Certification (In Progress)</li>
   </ul>
+
+<script>
+  function generatePDF() {
+    const element = document.body;
+    const opt = {
+      margin:       0.5,
+      filename:     'Sai_Priya_Anumula_Portfolio.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save();
+  }
+</script>
 </body>
+
 </html>
